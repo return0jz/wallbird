@@ -56,7 +56,7 @@ public:
         }
         if (birdSprite->getY() > 780) {
             std::cout << counter << " Obstacles dodged." << std::endl;
-            std::cout << "Survived for " << al_get_time() << "seconds." << std::endl;
+            std::cout << "Survived for " << (int) al_get_time() << " seconds." << std::endl;
             std::exit(0);
         }
         for (int i = 0; i < walls.size();i++) {
