@@ -4,8 +4,13 @@
 eng::Sprite* eng::Sprite::load(std::string path, int w, int h, int x, int y) {
     eng::Sprite *ptr = new Sprite();
     ALLEGRO_BITMAP *loaded;
+    auto al_pathobj = al_get_standard_path(ALLEGRO_RESOURCES_PATH);
+    chdir(al_path_cstr(al_pathobj, ALLEGRO_NATIVE_PATH_SEP));
+    al_destroy_path(al_pathobj);
     if (!(loaded = al_load_bitmap(path.data()))) {
+        std::cout << "could not find " << path << "." << std::endl;
         delete ptr;
+        std::exit(-1);
         return nullptr;
     } else {
         ptr->sprite = al_create_bitmap(w, h);
