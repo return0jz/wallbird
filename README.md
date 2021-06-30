@@ -1,4 +1,4 @@
 # wallbird
 A small game made with a homemade framework based on Allegro.
 
-Libs: Allegro and its addons.
+Uses the [Allegro](https://github.com/liballeg/allegro5) library.
